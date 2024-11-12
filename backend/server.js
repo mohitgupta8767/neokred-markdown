@@ -6,6 +6,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.send('API for Neokred Markdown App');
+});
+
 app.post('/convert', (req, res) => {
     const { markdown } = req.body;
     const html = marked(markdown);
